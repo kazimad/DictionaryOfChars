@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.StringTokenizer;
+
 
 /**
  * Created by KaZimad on 13.03.14.
@@ -17,20 +17,23 @@ public class DictionaryOfChars {
         while ((ch = bfr.readLine())!=null){
 
             for (int i =0; i <ch.length(); i++){
-                if (ch.charAt(i)==' '){
+                char charAt = ch.charAt(i);
+                if (charAt ==' '){
                     continue;
                 }
 
-                if ( MyMap.containsKey(ch.charAt(i))){
-                    MyMap.put((ch.charAt(i)),MyMap.get((ch.charAt(i))) +1);
+                if ( MyMap.containsKey(charAt)){
+                    MyMap.put(charAt,MyMap.get(charAt) +1);
 
                 }
-                else {MyMap.put((ch.charAt(i)),1);}
-
+                else {MyMap.put(charAt,1);}
+                System.out.print(charAt + "-" + MyMap.get(charAt));
+                System.out.print(' ');
             }
-            System.out.println("Буквы"+MyMap.keySet()+"Встречаються"+MyMap.values()+"раз");
 
-        }
+
+
     }
+}
 }
 
